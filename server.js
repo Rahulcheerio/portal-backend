@@ -1,19 +1,20 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
-
+const DB_URL = process.env.MONGODB ;
 // MongoDB
 // mongoose
   // .connect("mongodb://localhost:27017/jobPortal", {
 
 // const DB = 'mongodb+srv://rahul:Rahul@cluster0.arp5c0l.mongodb.net/?retryWrites=true&w=majority'
-const DB = 'mongodb+srv://admin:HikLGirp8U5nKyYN@cluster0.s2s9jmj.mongodb.net/?retryWrites=true&w=majority'
+// const DB = 'mongodb+srv://admin:HikLGirp8U5nKyYN@cluster0.s2s9jmj.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose
-  .connect(DB,{
+  .connect(DB_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
